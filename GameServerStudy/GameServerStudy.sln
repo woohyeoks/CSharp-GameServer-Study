@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatchMakerServer", "MatchMakerServer", "{2B64DE77-D880-4E91-B661-3BA39A653812}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicMatchingServer", "BasicMatchingServer\BasicMatchingServer.csproj", "{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SuperSocketStudy", "SuperSocketStudy", "{F26B37A2-05B7-4A05-BC96-5E16F738C39B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Listener", "Listener", "{1E8335DE-BFE3-444F-B479-4146AB07B128}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperListener", "SuperSocketStudy\SuperListener\SuperListener.csproj", "{BE232037-F7E5-48E2-A667-100FB6FA9B41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE232037-F7E5-48E2-A667-100FB6FA9B41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE232037-F7E5-48E2-A667-100FB6FA9B41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE232037-F7E5-48E2-A667-100FB6FA9B41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE232037-F7E5-48E2-A667-100FB6FA9B41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{91EE097B-CD93-4AFE-B3C1-B039E3E8DA30} = {2B64DE77-D880-4E91-B661-3BA39A653812}
+		{1E8335DE-BFE3-444F-B479-4146AB07B128} = {F26B37A2-05B7-4A05-BC96-5E16F738C39B}
+		{BE232037-F7E5-48E2-A667-100FB6FA9B41} = {1E8335DE-BFE3-444F-B479-4146AB07B128}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAE24353-109D-43D2-B45B-4825474FD6FD}
+	EndGlobalSection
+EndGlobal
