@@ -19,6 +19,8 @@ namespace SuperListener.Listener
             m_ListenBackLog = info.BackLog;
         }
 
+
+
         public override bool Start()
         {
             m_ListenSocket = new Socket(this.Info.EndPoint.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
@@ -40,6 +42,7 @@ namespace SuperListener.Listener
             }
             catch (Exception e)
             {
+                OnError(e);
                 return false;
             }
             return true;
@@ -60,6 +63,7 @@ namespace SuperListener.Listener
                 //The listen socket was closed
                 if (errorCode == 995 || errorCode == 10004 || errorCode == 10038)
                     return;
+                OnError(new SocketException(errorCode));
             }
             else
             {
@@ -75,11 +79,39 @@ namespace SuperListener.Listener
             }
             catch (Exception exc)
             {
+                OnError(exc);
                 willRaiseEvent = true;
             }
 
+            if (socket != null)
+                OnNewClientAccepted(socket, null);
+
             if (!willRaiseEvent)
                 ProcessAccept(e);
+        }
+
+        public override void Stop()
+        {
+            if (m_ListenSocket == null)
+                return;
+            lock (this)
+            {
+                if (m_ListenSocket == null)
+                    return;
+                m_AcceptSAE.Completed -= new EventHandler<SocketAsyncEventArgs>(acceptEventArg_Completed);
+                m_AcceptSAE.Dispose();
+                m_AcceptSAE = null;
+
+                try
+                {
+                    m_ListenSocket.Close();
+                }
+                finally
+                {
+                    m_ListenSocket = null;
+                }
+            }
+            OnStopped();
         }
     }
 }

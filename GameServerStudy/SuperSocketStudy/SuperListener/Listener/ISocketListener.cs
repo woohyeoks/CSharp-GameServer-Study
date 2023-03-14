@@ -11,11 +11,16 @@ namespace SuperListener.Listener
     delegate void ErrorHandler(ISocketListener listener, Exception e);
     delegate void NewClientAcceptHandler(ISocketListener listener, Socket client, object state);
 
-
     interface ISocketListener
     {
         ListenerInfo Info { get; }
         IPEndPoint EndPoint { get; }
         bool Start();
+        void Stop();
+
+
+        event NewClientAcceptHandler NewClientAccepted;
+        event ErrorHandler Error;
+        event EventHandler Stopped;
     }
 }
